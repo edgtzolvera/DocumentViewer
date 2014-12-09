@@ -1,13 +1,11 @@
 DocumentViewer
 ==============
 
-Document Viewer Demo, using Grails 2.4.4 and Angular JS
-
 The project uses Grails 2.4.4 and Java 7 — MySQL is an optional component and is currently only enabled for the production environment.
 
 1) The application has the following configurable option:
 
-demo.bootstrapData Defaults to false.
+demo.bootstrapData (false by default).
 
 If enabled, it will create bootstrap data for an environment other than development. 
 

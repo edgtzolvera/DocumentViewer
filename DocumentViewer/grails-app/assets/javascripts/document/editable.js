@@ -19,6 +19,7 @@ app.controller('EditableRowCtrl', function($scope, $http, $resource) {
     var Document = $resource(documentsUrl + '/:id',{id:'@id'},{
         query: {
             method: 'GET',
+            url: documentsUrl,
             isArray: false, //false, the grails controller will return a result array + total results
             params: $scope.filters
         },

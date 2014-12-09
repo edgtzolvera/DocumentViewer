@@ -1,5 +1,8 @@
 import com.qualcomm.demo.Document
 import grails.util.Environment
+import org.joda.time.DateTime
+import org.joda.time.DateTimeZone
+
 
 class BootStrap {
 
@@ -36,25 +39,25 @@ class BootStrap {
                        'Elavarasan Vinod'
         ]
 
-        def pubDate = [new GregorianCalendar(1855, 5, 16).time,
-                       new GregorianCalendar(1955, 3, 15).time,
-                       new GregorianCalendar(1982, 3, 4).time,
-                       new GregorianCalendar(1979, 4, 22).time,
-                       new GregorianCalendar(1955, 11, 30).time,
-                       new GregorianCalendar(1948, 8, 17).time,
-                       new GregorianCalendar(1810, 9, 16).time,
-                       new GregorianCalendar(1822, 10, 10).time,
-                       new GregorianCalendar(1910, 12, 1).time,
-                       new GregorianCalendar(1910, 11, 1).time,
-                       new GregorianCalendar(1776, 3, 1).time,
-                       new GregorianCalendar(1859, 8, 11).time,
-                       new GregorianCalendar(1824, 4, 15).time,
-                       new GregorianCalendar(1503, 6, 22).time,
-                       new GregorianCalendar(1966, 11, 30).time,
-                       new GregorianCalendar(1912, 8, 17).time,
-                       new GregorianCalendar(1834, 9, 16).time,
-                       new GregorianCalendar(1752, 2, 10).time,
-                       new GregorianCalendar(1910, 6, 8).time
+        def pubDate = [generateUniversalDate(1855, 5, 16),
+                       generateUniversalDate(1955, 3, 15),
+                       generateUniversalDate(1982, 3, 4),
+                       generateUniversalDate(1979, 4, 22),
+                       generateUniversalDate(1955, 11, 30),
+                       generateUniversalDate(1948, 8, 17),
+                       generateUniversalDate(1810, 9, 16),
+                       generateUniversalDate(1822, 10, 10),
+                       generateUniversalDate(1910, 12, 1),
+                       generateUniversalDate(1910, 11, 1),
+                       generateUniversalDate(1776, 3, 1),
+                       generateUniversalDate(1859, 8, 11),
+                       generateUniversalDate(1824, 4, 15),
+                       generateUniversalDate(1503, 6, 22),
+                       generateUniversalDate(1966, 11, 30),
+                       generateUniversalDate(1912, 8, 17),
+                       generateUniversalDate(1834, 9, 16),
+                       generateUniversalDate(1752, 2, 10),
+                       generateUniversalDate(1910, 6, 8)
         ]
 
 
@@ -95,5 +98,11 @@ class BootStrap {
 
     }
     def destroy = {
+    }
+
+    //Generate a date in UTC based on the year, month, dayOfMonth combination
+    private Date generateUniversalDate(int year, int month, int dayOfMonth) {
+        Date date = new DateTime(year, month, dayOfMonth, 0, 0, DateTimeZone.UTC).toDate()
+        return date
     }
 }

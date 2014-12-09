@@ -58,7 +58,7 @@
                 </a>
             </div>
             <div>
-                <input class="form-control" type="date" placeholder="YYYY-MM-DD" ng-model="filters.pubDate" ng-change="filter()" ng-model-options="{debounce:1000}">
+                <input class="form-control" type="date" placeholder="YYYY-MM-DD" ng-model="filters.pubDate" ng-change="filter()" ng-model-options="{debounce:1000, timezone:'UTC'}">
             </div>
 
         </th>
@@ -104,8 +104,8 @@
         <td>
             <!-- editable status (select-local) -->
 
-            <span editable-bsdate="document.pubDate" e-type="date" e-class="form-control"  e-placeholder="YYYY-MM-DD" e-name="pubDate" e-form="rowform" onbeforesave="checkPubDate($data)" e-required>
-                {{ (document.pubDate |date : 'M/d/yyyy') || 'empty' }}
+            <span editable-bsdate="document.pubDate" e-type="date" e-class="form-control"  e-placeholder="YYYY-MM-DD" e-ng-model-options="{timezone:'UTC'}" e-name="pubDate" e-form="rowform" onbeforesave="checkPubDate($data)" e-required>
+                {{ (document.pubDate |date : 'longDate' : 'UTC') || 'empty' }}
             </span>
         </td>
 

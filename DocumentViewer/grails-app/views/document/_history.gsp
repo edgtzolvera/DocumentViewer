@@ -20,18 +20,18 @@
         <td>{{document.id || 'Not Saved'}}</td>
         <td>{{document.version}}</td>
         <td>{{ document.author || 'empty' }}</td>
-        <td>{{ (document.pubDate |date : 'M/d/yyyy') || 'empty' }}</td>
+        <td>{{ (document.pubDate |date : 'longDate' : 'UTC') || 'empty' }}</td>
         <td>{{ document.description || 'empty' }}</td>
-        <td>{{ document.fromDate | date: "MM/dd/yyyy 'at' h:mm:ss a Z" }}</td>
-        <td>{{ document.toDate | date: "MM/dd/yyyy 'at' h:mm:ss a Z" }}</td>
+        <td>{{ document.fromDate | date: "MMMM d, y 'at' h:mm:ss a Z" }}</td>
+        <td>{{ document.toDate | date: "MMMM d, y 'at' h:mm:ss a Z" }}</td>
     </tr>
     <tr ng-if="historyCurrent">
         <td>{{historyCurrent.id || 'Not Saved'}}</td>
         <td>{{historyCurrent.version}}</td>
         <td>{{ historyCurrent.author || 'empty' }}</td>
-        <td>{{ (historyCurrent.pubDate |date : 'M/d/yyyy') || 'empty' }}</td>
+        <td>{{ (historyCurrent.pubDate |date : 'longDate' : 'UTC') || 'empty' }}</td>
         <td>{{ historyCurrent.description || 'empty' }}</td>
-        <td>{{ historyCurrent.lastUpdated | date: "MM/dd/yyyy 'at' h:mm:ss a Z" }}</td>
+        <td>{{ historyCurrent.lastUpdated | date: "MMMM d, y 'at' h:mm:ss a Z" }}</td>
         <td>Currently Active</td>
     </tr>
     </tbody>

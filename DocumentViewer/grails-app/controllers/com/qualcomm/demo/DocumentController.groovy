@@ -2,6 +2,9 @@ package com.qualcomm.demo
 import org.apache.commons.lang.time.DateUtils
 import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.grails.datastore.mapping.query.api.BuildableCriteria
+
+import java.text.SimpleDateFormat
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -22,6 +25,7 @@ class DocumentController {
      * The rest of the controller is mostly a stock one.
      */
     def index(Integer max) {
+
         params.pubDate = params.date('pubDate', grailsApplication.config.grails.databinding.dateFormats)
         params.max = Math.min(max ?: 10, 100)
         params.offset = params.long('offset') ?: 0
@@ -39,7 +43,7 @@ class DocumentController {
                 if(params.description)
                     ilike('description', "%${params.description}%")
                 if(params.pubDate)
-                    between('pubDate', getStartOfDay(params.pubDate), getEndOfDay(params.pubDate))
+                    eq('pubDate', params.pubDate)
             }
             order(params.sort ?: 'id', params.order ?: 'asc') //get order from params, if nothing specified do id / desc
         }

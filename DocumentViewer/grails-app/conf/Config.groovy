@@ -119,3 +119,6 @@ log4j.main = {
 
 //Adding additional date binders to correspond with the date objects typically sent by JS apps
 grails.databinding.dateFormats = ["yyyy-MM-dd'T'HH:mm:ss.SSSXXX", "yyyy-MM-dd HH:mm:ss.S", "yyyy-MM-dd'T'hh:mm:ss'Z'"]
+
+//Bootstrap data for other environments?
+demo.bootstrapData = false

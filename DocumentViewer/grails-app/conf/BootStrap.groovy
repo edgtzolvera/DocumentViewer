@@ -1,10 +1,13 @@
 import com.demo.Document
 import grails.util.Environment
+import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.joda.time.DateTime
 import org.joda.time.DateTimeZone
 
 
 class BootStrap {
+
+    GrailsApplication grailsApplication
 
     def init = { servletContext ->
 
@@ -90,7 +93,7 @@ class BootStrap {
                            'Family Violence'
         ]
 
-        if(Environment.current == Environment.DEVELOPMENT) {
+        if(Environment.current == Environment.DEVELOPMENT || grailsApplication.config.demo.bootstrapData) {
             for(i in 1..5000) {
                 new Document(author: authors.rand, pubDate: pubDate.rand, description: description.rand).save(flush: true)
             }

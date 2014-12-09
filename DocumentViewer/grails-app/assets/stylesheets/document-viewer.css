@@ -1,0 +1,29 @@
+/*
+*= require bootstrap.css
+*= require bootstrap-theme.css
+*= require font-awesome.css
+*= require xeditable.css
+*= require sweet-alert.css
+*/
+
+
+.no-pad {
+    padding-right: 0 !important;
+}
+
+.ng-invalid {
+    color: #a94442;
+}
+.ng-invalid {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+.ng-invalid:focus {
+    border-color: #843534;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+}
+
+
+

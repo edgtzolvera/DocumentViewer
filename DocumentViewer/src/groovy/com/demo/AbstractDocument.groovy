@@ -1,4 +1,4 @@
-package com.qualcomm.demo
+package com.demo
 /**
  * Created by edgtzolvera on 12/9/14.
  */

@@ -1,4 +1,4 @@
-package com.qualcomm.demo
+package com.demo
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification

@@ -1,4 +1,4 @@
-import com.qualcomm.demo.CustomDocumentMarshaller
+import com.demo.CustomDocumentMarshaller
 
 // Place your Spring DSL code here
 beans = {

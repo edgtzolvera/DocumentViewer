@@ -1,4 +1,4 @@
-import com.qualcomm.demo.Document
+import com.demo.Document
 import grails.util.Environment
 import org.joda.time.DateTime
 import org.joda.time.DateTimeZone

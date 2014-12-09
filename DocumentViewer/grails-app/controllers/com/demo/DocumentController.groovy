@@ -1,9 +1,7 @@
-package com.qualcomm.demo
+package com.demo
 import org.apache.commons.lang.time.DateUtils
 import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.grails.datastore.mapping.query.api.BuildableCriteria
-
-import java.text.SimpleDateFormat
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional

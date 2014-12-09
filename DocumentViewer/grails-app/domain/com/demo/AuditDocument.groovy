@@ -1,4 +1,4 @@
-package com.qualcomm.demo
+package com.demo
 
 import groovy.transform.EqualsAndHashCode
 
